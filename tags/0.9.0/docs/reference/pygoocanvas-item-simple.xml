@@ -1,0 +1,482 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+      "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-canvas-item-simple">
+
+	<refnamediv>
+		<refname>goocanvas.ItemSimple</refname>
+		<refpurpose>The base class for the standard canvas items.</refpurpose>
+	</refnamediv>
+	
+	<refsect1>
+		<title>Synopsis</title>
+	
+		<classsynopsis language="python">
+			<ooclass><classname>goocanvas.ItemSimple</classname></ooclass>
+			<ooclass><classname>gobject.GObject</classname></ooclass>
+
+			<methodsynopsis language="python">
+				<methodname><link linkend="method-goocanvasitemsimple--changed">changed</link></methodname>
+				<methodparam><parameter role="keyword">recompute_bounds</parameter></methodparam>
+			</methodsynopsis>
+
+            <methodsynopsis language="python">
+				<methodname><link linkend="method-goocanvasitemsimple--check-in-path">check_in_path</link></methodname>
+				<methodparam><parameter role="keyword">x</parameter></methodparam>
+				<methodparam><parameter role="keyword">y</parameter></methodparam>
+				<methodparam><parameter role="keyword">cr</parameter></methodparam>
+				<methodparam><parameter role="keyword">pointer_events</parameter></methodparam>
+			</methodsynopsis>
+            
+            <methodsynopsis language="python">
+				<methodname><link linkend="method-goocanvasitemsimple--check-style">check_style</link></methodname>
+				<methodparam></methodparam>
+			</methodsynopsis>
+
+            <methodsynopsis language="python">
+				<methodname><link linkend="method-goocanvasitemsimple--get-line-width">get_line_width</link></methodname>
+				<methodparam></methodparam>
+			</methodsynopsis>
+
+			<methodsynopsis language="python">
+				<methodname><link linkend="method-goocanvasitemsimple--get-path-bounds">get_path_bounds</link></methodname>
+				<methodparam><parameter role="keyword">cr</parameter></methodparam>
+			</methodsynopsis>
+
+			<methodsynopsis language="python">
+				<methodname><link linkend="method-goocanvasitemsimple--paint-path">paint_path</link></methodname>
+				<methodparam><parameter role="keyword">cr</parameter></methodparam>
+			</methodsynopsis>
+
+			<methodsynopsis language="python">
+				<methodname><link linkend="method-goocanvasitemsimple--set-model">set_model</link></methodname>
+				<methodparam><parameter role="keyword">model</parameter></methodparam>
+			</methodsynopsis>
+
+			<methodsynopsis language="python">
+				<methodname><link linkend="method-goocanvasitemsimple--user-bounds-to-device">user_bounds_to_device</link></methodname>
+				<methodparam><parameter role="keyword">cr</parameter></methodparam>
+				<methodparam><parameter role="keyword">bounds</parameter></methodparam>
+			</methodsynopsis>
+
+            <methodsynopsis language="python">
+				<methodname><link linkend="method-goocanvasitemsimple--user-bounds-to-parent">user_bounds_to_parent</link></methodname>
+				<methodparam><parameter role="keyword">cr</parameter></methodparam>
+				<methodparam><parameter role="keyword">bounds</parameter></methodparam>
+			</methodsynopsis>
+		</classsynopsis>
+	</refsect1>
+
+	<refsect1>
+		<title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-canvas-item-simple">goocanvas.ItemSimple</link>
+</synopsis>
+
+	</refsect1>
+	
+	<refsect1 id="properties-goocanvasitemsimple">
+		<title>goocanvas.ItemSimple Properties</title>
+	
+		<blockquote role="properties">
+			<informaltable pgwide="1" frame="none">
+				<tgroup cols="3">
+					<colspec column="1" colwidth="1in"/>
+					<colspec column="2" colwidth="1in"/>
+					<colspec column="3" colwidth="3.5in"/>
+						<tbody>
+						<row valign="top">
+							<entry>"antialias"</entry>
+							<entry>Read/Write</entry>
+							<entry>The antialiasing mode to use. Default value: cairo.ANTIALIAS_DEFAULT</entry>
+						</row>
+                        
+                        <row valign="top">
+							<entry>"clip-fill-rule"</entry>
+							<entry>Read/Write</entry>
+							<entry>The fill rule used to determine which parts of the item are clipped.
+                                   Default value: cairo.FILL_RULE_WINDING</entry>
+						</row>
+                        
+                        <row valign="top">
+							<entry>"clip-path"</entry>
+							<entry>Write</entry>
+							<entry>The sequence of commands describing the clip path of the item,
+                                   specified as a string using the same syntax as in the
+                                   Scalable Vector Graphics (SVG) path element.
+                                   Default value: None</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"fill-color"</entry>
+							<entry>Write</entry>
+							<entry>The color to use to paint the interior of the item. Default value: None</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"fill-color-rgba"</entry>
+							<entry>Write</entry>
+							<entry>The color to use to paint the interior of the item, specified as a 32-bit integer value. Default value: 0</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"fill-pattern"</entry>
+							<entry>Read/Write</entry>
+							<entry>The pattern to use to paint the interior of the item.</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"fill-pixbuf"</entry>
+							<entry>Write</entry>
+							<entry>The pixbuf to use to paint the interior of the item.</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"fill-rule"</entry>
+							<entry>Read/Write</entry>
+							<entry>The fill rule used to determine which parts of the item are filled. Default value: cairo.FILL_RULE_WINDING</entry>
+						</row>
+                        
+                        <row valign="top">
+							<entry>"font"</entry>
+							<entry>Read/Write</entry>
+							<entry>The base font to use for the text. Default value: None</entry>
+						</row>
+                        
+                        <row valign="top">
+							<entry>"font-desc"</entry>
+							<entry>Read/Write</entry>
+							<entry>The attributes specifying which font to use.</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"line-cap"</entry>
+							<entry>Read/Write</entry>
+							<entry>The line cap style to use. Default value: cairo.LINE_CAP_BUTT</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"line-dash"</entry>
+							<entry>Read/Write</entry>
+							<entry>The dash pattern to use.</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"line-join"</entry>
+							<entry>Read/Write</entry>
+							<entry>The line join style to use. Default value: cairo.LINE_JOIN_MITER</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"line-join-miter-limit"</entry>
+							<entry>Read/Write</entry>
+							<entry>The smallest angle to use with miter joins, in degrees. 
+								Bevel joins will be used below this limit. Allowed values: >= 0 Default value: 10.</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"line-width"</entry>
+							<entry>Read/Write</entry>
+							<entry>The line width to use for the item's perimeter. Allowed values: >= 0 Default value: 0</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"operator"</entry>
+							<entry>Read/Write</entry>
+							<entry>The compositing operator to use. Default value: cairo.OPERATOR_OVER</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"stroke-color"</entry>
+							<entry>Write</entry>
+							<entry>The color to use for the item's perimeter. Default value: None</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"stroke-color-rgba"</entry>
+							<entry>Write</entry>
+							<entry>The color to use for the item's perimeter, specified as a 32-bit integer value. Default value: 0</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"stroke-pattern"</entry>
+							<entry>Read/Write</entry>
+							<entry>The pattern to use to paint the perimeter of the item.</entry>
+						</row>
+
+						<row valign="top">
+							<entry>"stroke-pixbuf"</entry>
+							<entry>Write</entry>
+							<entry>The pixbuf to use to draw the item's perimeter.</entry>
+						</row>	
+					</tbody>
+				</tgroup>
+			</informaltable>
+		</blockquote>
+	</refsect1>
+	<refsect1>
+		<title>Known Implementation</title>
+		<para>
+			<link linkend="class-canvas-item-simple"><classname>goocanvas.ItemSimple</classname></link>
+			is implementated by 
+			<link linkend="class-canvas-rect"><classname>goocanvas.Rect</classname></link>
+			<link linkend="class-canvas-rect"><classname>goocanvas.Ellipse</classname></link>
+			<link linkend="class-canvas-rect"><classname>goocanvas.Path</classname></link>
+			<link linkend="class-canvas-rect"><classname>goocanvas.Polyline</classname></link>
+			<link linkend="class-canvas-rect"><classname>goocanvas.Text</classname></link>
+			<link linkend="class-canvas-rect"><classname>goocanvas.Image</classname></link>
+			<link linkend="class-canvas-rect"><classname>goocanvas.Group</classname></link>
+		</para>
+	</refsect1>
+
+	<refsect1>
+		<title>Implemented Interfaces</title>
+		<para>
+			<link linkend="class-canvas-item-simple"><classname>goocanvas.ItemSimple</classname></link>
+			implements 
+			<link linkend="class-canvas-item"><classname>goocanvas.Item</classname></link>
+		</para>
+	</refsect1>
+
+	<refsect1>
+		<title>Description</title>
+			<link linkend="class-canvas-item-simple"><classname>goocanvas.ItemSimple</classname></link> 
+			is used as a base class for all of the standard canvas items.
+            It can also be used as the base class for new custom canvas items.
+            It provides default implementations for many of the
+            <link linkend="class-canvas-item"><classname>goocanvas.Item</classname></link> methods.
+            For very simple items, all that is needed is to implement the create_path() method.
+            (GooCanvasEllipse, GooCanvasRect and GooCanvasPath do this.)
+            More complicated items need to implement the update(), paint() and get_item_at() methods.
+            (GooCanvasImage, GooCanvasPolyline, GooCanvasText and GooCanvasWidget do this.)
+            They may also need to override some of the other GooCanvasItem methods such as set_canvas(),
+            set_parent() or allocate_area() if special code is needed. (GooCanvasWidget does this to make
+            sure the GtkWidget is embedded in the GooCanvas widget correctly.)
+	</refsect1>
+
+	<refsect1>
+	<title>Methods</title>
+		
+		<refsect2 id="method-goocanvasitemsimple--changed">
+			<title>goocanvas.ItemSimple.changed</title>
+			<programlisting><methodsynopsis language="python">
+				<methodname>changed</methodname>
+				<methodparam><parameter role="keyword">recompute_bounds</parameter></methodparam>
+			</methodsynopsis></programlisting>
+
+			<variablelist>
+				<varlistentry>
+					<term><parameter role="keyword">recompute_bounds</parameter>&nbsp;:</term>
+					<listitem><simpara>If the item's bounds need to be recomputed.</simpara></listitem>
+				</varlistentry>
+			</variablelist>
+
+			<para>
+				This method is intended to be used by subclasses of
+                <link linkend="class-canvas-item-simple"><classname>goocanvas.ItemSimple</classname></link>.
+                It is used as a callback for the "changed" signal of the item models.
+                It requests an update or redraw of the item as appropriate.
+			</para>
+		</refsect2>
+
+        <refsect2 id="method-goocanvasitemsimple--check-in-path">
+			<title>goocanvas.ItemSimple.check_in_path</title>
+			<programlisting><methodsynopsis language="python">
+				<methodname>check_in_path</methodname>
+				<methodparam><parameter role="keyword">x</parameter></methodparam>
+				<methodparam><parameter role="keyword">y</parameter></methodparam>
+				<methodparam><parameter role="keyword">cr</parameter></methodparam>
+				<methodparam><parameter role="keyword">pointer_events</parameter></methodparam>
+			</methodsynopsis></programlisting>
+
+			<variablelist>
+				<varlistentry>
+					<term><parameter role="keyword">x</parameter>&nbsp;:</term>
+					<listitem><simpara>the x coordinate of the point.</simpara></listitem>
+				</varlistentry>
+				<varlistentry>
+					<term><parameter role="keyword">y</parameter>&nbsp;:</term>
+					<listitem><simpara>the y coordinate of the point.</simpara></listitem>
+				</varlistentry>
+				<varlistentry>
+					<term><parameter role="keyword">cr</parameter>&nbsp;:</term>
+					<listitem><simpara>a cairo context.</simpara></listitem>
+				</varlistentry>
+				<varlistentry>
+					<term><parameter role="keyword">pointer_events</parameter>&nbsp;:</term>
+					<listitem><simpara>specifies which parts of the path to check.</simpara></listitem>
+				</varlistentry>
+				<varlistentry>
+					<term><emphasis>Returns</emphasis>&nbsp;:</term>
+					<listitem><simpara>True if the given point is in the current path.</simpara></listitem>
+				</varlistentry>
+			</variablelist>
+
+			<para>
+				Checks if the given point is in the current path.
+			</para>
+		</refsect2>
+
+        <refsect2 id="method-goocanvasitemsimple--check-style">
+			<title>goocanvas.ItemSimple.check_style</title>
+			<programlisting><methodsynopsis language="python">
+				<methodname>check_style</methodname>
+				<methodparam></methodparam>
+			</methodsynopsis></programlisting>
+
+			<variablelist>
+			</variablelist>
+
+			<para>
+				This method is intended to be used by subclasses of
+                <link linkend="class-canvas-item-simple"><classname>goocanvas.ItemSimple</classname></link>,
+                typically in their update() or get_requested_area() methods.
+                It ensures that the item's style is setup correctly. If the item has its own
+                <link linkend="class-canvas-style"><classname>goocanvas.Style</classname></link>
+                it makes sure the parent is set correctly.
+                If it doesn't have its own style it uses the parent item's style.
+			</para>
+		</refsect2>
+
+        <refsect2 id="method-goocanvasitemsimple--get-line-width">
+			<title>goocanvas.ItemSimple.get_line_width</title>
+			<programlisting><methodsynopsis language="python">
+				<methodname>get_line_width</methodname>
+				<methodparam></methodparam>
+			</methodsynopsis></programlisting>
+
+			<variablelist>
+                <varlistentry>
+					<term><emphasis>Returns</emphasis>&nbsp;:</term>
+					<listitem><simpara>The item's line width.</simpara></listitem>
+				</varlistentry>
+			</variablelist>
+
+			<para>
+				Gets the item's line width.
+			</para>
+		</refsect2>
+
+		<refsect2 id="method-goocanvasitemsimple--get-path-bounds">
+			<title>goocanvas.ItemSimple.get_path_bounds</title>
+			<programlisting><methodsynopsis language="python">
+				<methodname>get_path_bounds</methodname>
+				<methodparam><parameter role="keyword">cr</parameter></methodparam>
+				<methodparam><parameter role="keyword">bounds</parameter></methodparam>
+			</methodsynopsis></programlisting>
+
+			<variablelist>
+				<varlistentry>
+					<term><parameter role="keyword">cr</parameter>&nbsp;:</term>
+					<listitem><simpara>A cairo context.</simpara></listitem>
+				</varlistentry>
+                <varlistentry>
+					<term><emphasis>Returns</emphasis>&nbsp;:</term>
+					<listitem><simpara>The goocanvas.Bounds holding the bounding box
+                        of the item in device space, converted to user space coordinates</simpara></listitem>
+				</varlistentry>
+			</variablelist>
+
+			<para>
+				Calculates the bounds of the current path in device space,
+                storing the results in a goocanvas.Bounds.
+			</para>
+            <para>
+                This method should be used only while implementing custom items
+            </para>
+		</refsect2>
+
+		<refsect2 id="method-goocanvasitemsimple--paint-path">
+			<title>goocanvas.ItemSimple.paint_path</title>
+			<programlisting><methodsynopsis language="python">
+				<methodname>paint_path</methodname>
+				<methodparam><parameter role="keyword">cr</parameter></methodparam>
+			</methodsynopsis></programlisting>
+
+			<variablelist>
+				<varlistentry>
+					<term><parameter role="keyword">cr</parameter>&nbsp;:</term>
+					<listitem><simpara>A cairo context.</simpara></listitem>
+				</varlistentry>
+			</variablelist>
+
+			<para>
+				Paints the current path, using the item's style settings.
+			</para>
+		</refsect2>
+
+        <refsect2 id="method-goocanvasitemsimple--set-model">
+			<title>goocanvas.ItemSimple.set_model</title>
+			<programlisting><methodsynopsis language="python">
+				<methodname>set_model</methodname>
+				<methodparam><parameter role="keyword">model</parameter></methodparam>
+			</methodsynopsis></programlisting>
+
+			<variablelist>
+				<varlistentry>
+					<term><parameter role="keyword">model</parameter>&nbsp;:</term>
+					<listitem><simpara>The model that item will view.</simpara></listitem>
+				</varlistentry>
+			</variablelist>
+
+			<para>
+				This function should be called by subclasses of
+                <link linkend="class-canvas-item-simple"><classname>goocanvas.ItemSimple</classname></link>
+                in their set_model() method.
+			</para>
+		</refsect2>
+
+		<refsect2 id="method-goocanvasitemsimple--user-bounds-to-device">
+			<title>goocanvas.ItemSimple.user_bounds_to_device</title>
+			<programlisting><methodsynopsis language="python">
+				<methodname>user_bounds_to_device</methodname>
+				<methodparam><parameter role="keyword">cr</parameter></methodparam>
+				<methodparam><parameter role="keyword">bounds</parameter></methodparam>
+			</methodsynopsis></programlisting>
+
+			<variablelist>
+				<varlistentry>
+					<term><parameter role="keyword">cr</parameter>&nbsp;:</term>
+					<listitem><simpara>a cairo context.</simpara></listitem>
+				</varlistentry>
+				<varlistentry>
+					<term><parameter role="keyword">bounds</parameter>&nbsp;:</term>
+					<listitem><simpara>the bounds of the item, in the item's coordinate space.</simpara></listitem>
+				</varlistentry>
+			</variablelist>
+
+			<para>
+				Converts the item's bounds to a bounding box in device space.
+			</para>
+		</refsect2>
+
+        <refsect2 id="method-goocanvasitemsimple--user-bounds-to-parent">
+			<title>goocanvas.ItemSimple.user_bounds_to_parent</title>
+			<programlisting><methodsynopsis language="python">
+				<methodname>user_bounds_to_parent</methodname>
+				<methodparam><parameter role="keyword">cr</parameter></methodparam>
+				<methodparam><parameter role="keyword">bounds</parameter></methodparam>
+			</methodsynopsis></programlisting>
+
+			<variablelist>
+				<varlistentry>
+					<term><parameter role="keyword">cr</parameter>&nbsp;:</term>
+					<listitem><simpara>A cairo context.</simpara></listitem>
+				</varlistentry>
+				<varlistentry>
+					<term><parameter role="keyword">bounds</parameter>&nbsp;:</term>
+					<listitem><simpara>the bounds of the item, in the item's coordinate space.</simpara></listitem>
+				</varlistentry>
+			</variablelist>
+
+			<para>
+				Converts the item's bounds to a bounding box in its parent's coordinate space.
+                If the item has no transformation matrix set then no conversion is needed.
+                This is typically needed when implementing the get_requested_area() method for subclasses of
+                <link linkend="class-canvas-item-simple"><classname>goocanvas.ItemSimple</classname></link>.
+			</para>
+		</refsect2>
+	</refsect1>
+</refentry>
