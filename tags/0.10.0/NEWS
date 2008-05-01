@@ -1,0 +1,88 @@
+PyGooCanvas 0.10.0	(May 01 2008)
+==================
+
+ o Install a .pc file (Gustavo)
+ o Add goocanvas.ItemSimple.bounds getsets (Gustavo)
+ o prevent PYGTK from being imported into goocanvasmodule,
+   patch from Randall Wood. Fixes LP#150412
+ o fix object registration TYPE_CAIRO_PATTERN (Gian Mario)
+ o New custom example for SVG images. (Gian Mario)
+ o update with new goocanvas 0.10 API (Gian Mario)
+ o fix a bug introduced by pycairo API change, see LP#222503
+   reported by David Boucher (Gian Mario)
+ o Update docs according to new API (Gian Mario)
+
+PyGooCanvas 0.9.0	(Aug 18 2007)
+=================
+
+ o Wrap goo_canvas_item_get_bounds (Gian Mario)
+ o fix compilation on Solaris, patch by
+   JerryYu <jijun.yu@sun.com>. Fixes LP#130106 (Gian Mario)
+ o Add goocanvas.ItemSimple.get_line_width (Gian Mario)
+ o Docs updated fixes LP#124921 (Gian Mario)
+
+
+PyGooCanvas 0.8.0	(Apr 03 2007)
+=================
+
+ o Register some const-GooCanvasBounds* argtypes (Gustavo)
+ o Fix ellipse animation by proppy@gmail.com fixes LP#95468
+ o Restructured examples and docs (Gian Mario)
+ o Add new API following goocanvas (Gian Mario)
+   goo_canvas_item_remove
+   goo_canvas_item_model_remove
+   goo_canvas_create_cairo_context
+   goo_canvas_item_get_requested_height
+ o Fix goo_canvas_item_get_transform and
+   goo_canvas_item_model_get_transform (Gian Mario)
+ o Wrap wrap goo_canvas_item_get_items_at(Gian Mario)
+ o Fix goo_canvas_item_simple_get_path_bounds (Gian Mario)
+ o Wrap goo_canvas_get_items_at goo_canvas_get_items_in_area (Gian Mario)
+ o Wrap few more methods as classmethod (Gian Mario)
+   GooCanvasItem.install_child_property
+   GooCanvasItemModel.install_child_property
+   GooCanvasItemModel.find_child_property
+   GooCanvasItem.list_child_properties
+   GooCanvasItemModel.list_child_properties
+ 
+
+PyGooCanvas 0.6.0	(Feb 19 2007)
+=================
+
+ o Rename and implement latest API changes according to
+   goocanvas 0.6 (Gian Mario)
+ o wrap GooCanvasItem.find_child_property as classmethod (Gian Mario)
+ o New example of Table (Gian Mario)
+ o Wrap goo_canvas_polyline_model_new_line Gian Mario)
+ o Wrap goo_canvas_item_model_[get|set]_child_properties (Gian Mario)
+ o Wrap goo_canvas_item_[get|set]_child_properties (Gian Mario)
+ o Add setters for bounds_x1, bounds_x2, bounds_y1,
+   bounds_y2 of goocanvas.ItemSimple.  Closes LP#81992. (Gustavo)
+ o Wrap all new methods of goocanvas.Style (Gustavo)
+ o Implement mapping methods in goocanvas.Style (Gustavo)
+ o _wrap_GooCanvasItem__proxy_do_get_bounds,
+   _wrap_GooCanvasItem__proxy_do_update,
+   Override to implement proper 'return value' semantics for the
+   bounds parameter. (Gustavo)
+ o Add a reversewrapper. Parameter handler for GooCanvasBounds* (Gustavo)
+ o Added new examples (Gian Mario, Gustavo)
+ o _cairo_pattern_to_gvalue: allow pattern=None in properties (Gustavo)
+ o Regenerated defs files with new goocanvas include files (Gian Mario)
+
+
+PyGooCanvas 0.4.2	(Dec 18 2006)
+=================
+
+ o Wrapped missing method goocanvas.Group.set_model (Gian Mario)
+ o Wrapped missing methods of goocanvas.ItemView (Gian Mario)
+ o Fixed function item_view_simple_item_changed (Gian Mario)
+ o Improved documentation (Gian Mario)
+
+
+PyGooCanvas 0.4.1	(Sep 10 2006)
+=================
+
+ o Much better support for subclassing ItemSimple / ItemSimpleView (Gustavo)
+ o Don't crash an functions returning NULL CairoMatrix (Marco Pesenti Gritti)
+ o CairoPattern property convertion bug fixed (Gustavo)
+
